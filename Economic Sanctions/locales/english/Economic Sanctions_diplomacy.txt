@@ -1,0 +1,14 @@
+CARD_PREVARICATE_DESC: <<
+	[img][i][color=#998877]That is to say, increasing the frequency of conversational sesquipedalianism vis a vis prolix grandiloquence can often enhancify the stated velleity for elaborated process, despite a distinct lack of linguistic focus with respect to the original intent.[/color][/i][/img]
+	Delaying tactics and distracting the senate with bombastic and unnecessary language can extend a vote considerably, perhaps until further resources can be brought into play.
+
+	[i]The vote will be reset to three minutes and slowed down further with each Prevaricate played.  The costs to play support cards in either direction cost 1 extra influence to play as senators become bored or confused.[/i]
+>>
+CARD_PREVARICATE_LOG: * The $1 [color=#682e1d][b]Prevaricates[/b][/color], extending the duration of the vote and boring the committee.
+CARD_IMPOSE_SANCTIONS_DESC: <<
+	Revealing evidence of great corruption in the markets of a given world, we can petition the galactic senate to impose sanctions forbidding traders from contributing to the problem.  Although it will be mostly independent or unaligned traders who are actually stopped by such a proclamation, the economic consequences can still be significant.
+
+	[i]The influence cost to play this action depends on the level of the target planet. If the vote created by this action passes, it will take the specified percentage penalty to all its resource production. The target planet must be scouted and you cannot be at war with the owner - the senate will not entertain such a transparent attempt at manipulation.[/i]
+
+	[color=#aa9999]Note: This card is currently not quite finished - It still works, but the target planet will take 10 stacks of Blockaded per level for 9 minutes, rather than a percentage penalty while an influence event lasts.  There's also no upkeep cost, and you can't cancel it early. [/color]
+>>

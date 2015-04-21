@@ -1,0 +1,37 @@
+Card: ImposeSanctions
+	Name: Impose Sanctions
+	Description: #CARD_IMPOSE_SANCTIONS_DESC
+
+	Icon: CardIcons::0 * #ff9d02
+
+	Target: planet = Object
+
+	Color: #ff7002
+	Class: Effect
+
+	Base Purchase Cost: 4
+	Max Uses: 2
+	Rarity: Uncommon
+	Quality Purchase Cost: 3
+	Uses Purchase Cost: 2
+	Base Play Cost: 1
+
+	TargetFilterOtherEmpire(planet)
+	TargetFilterType(planet, Planet)
+	TargetRequireVision(planet)
+	ApplyRegionTargetCostMod(planet)
+
+
+	StartVote(ImposeSanctions, planet)
+
+	dar_card_effects::SquaredLevelPlayCost(planet, 2.0)
+	TargetFilterNotWar(planet)
+Vote: ImposeSanctions
+	Name: Impose Trade Sanctions
+
+	Icon: CardIcons::0 * #ff9d02
+
+	Target: planet = Object
+	CancelOnDestroyed(planet)
+
+	dar_card_effects::ImposeSanctions(Pass, planet)

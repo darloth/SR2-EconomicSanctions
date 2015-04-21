@@ -1,0 +1,6 @@
+	Name: Economic Sanctions
+	Description: <<
+		Haven't you ever wanted to be the commissioner of the senate imposing crippling economic sanctions on those who flaunt the decisions of the council? Now you can!
+
+		(Also contains Prevaricate to delay votes, and might contain more influence based shenanigans later.)
+	>>

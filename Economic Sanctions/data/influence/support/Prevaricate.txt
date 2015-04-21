@@ -1,0 +1,24 @@
+Card: Prevaricate
+	Name: Prevaricate
+	Description: #CARD_PREVARICATE_DESC
+	Color: #682e1d
+
+	Icon: CardIcons::24 * #ff6500
+
+	Class: Support
+	Rarity: Uncommon
+	Side: Neutral
+
+	Base Purchase Cost: 4
+	Base Play Cost: 4
+	Can Overquality: False
+
+	LogVoteEvent(Neutral = #CARD_PREVARICATE_LOG)
+
+	AddVotePositiveCostPenalty(+1)
+
+	MultiplyVoteNegativeSpeed(0.8)
+	MultiplyVotePositiveSpeed(0.8)
+	ListActiveEffect()
+	ExtendRemainingTimeTo(180)
+	AddVoteNegativeCostPenalty(+1)

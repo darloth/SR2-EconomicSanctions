@@ -1,0 +1,26 @@
+Card: FreeNameFlagship
+	Name: #CARD_FREENAMEFLAGSHIP
+	Description: #CARD_FREENAMEFLAGSHIP_DESC
+
+	Icon: CardIcons::18 * #aaffff
+
+	Color: #206080
+	Class: Action
+	Rarity: Rare
+
+
+
+	Target: ship = Object
+	TargetFilterOwned(ship)
+	TargetFilterFlagship(ship)
+	TargetFilterUnnamed(ship)
+
+	Target: name = Text
+	Frequency: 0
+	Can Overquality: False
+	TargetDefaultFlagshipName(name)
+
+	NameObject(ship, name)
+
+
+	OnOwner(GainInfluenceCard(FreeNameFlagship))

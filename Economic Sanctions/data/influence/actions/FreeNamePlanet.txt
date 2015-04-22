@@ -1,0 +1,25 @@
+Card: FreeNamePlanet
+	Name: #CARD_FREENAMEPLANET
+	Description: #CARD_FREENAMEPLANET_DESC
+
+	Icon: CardIcons::15 * aaffff
+
+	Color: #206080
+	Class: Action
+	Rarity: Rare
+
+
+
+
+	Target: planet = Object
+	TargetFilterOwned(planet)
+	TargetFilterType(planet, Planet)
+	TargetFilterUnnamed(planet)
+
+	Target: name = Text
+	Can Overquality: False
+	Frequency: 0
+	TargetDefaultPlanetName(name)
+
+	OnOwner(GainInfluenceCard(FreeNamePlanet))
+	NameObject(planet, name)

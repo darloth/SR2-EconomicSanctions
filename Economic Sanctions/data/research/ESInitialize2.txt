@@ -1,0 +1,6 @@
+Technology: ESInitialize2
+	Name: Man behind curtain 2
+	Color: #aaaaaa
+
+	Description: Nothing to see here!  This tech is just for mod initialization.
+	Default Unlock: True

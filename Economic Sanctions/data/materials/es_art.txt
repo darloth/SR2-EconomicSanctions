@@ -1,0 +1,3 @@
+Material: NameOther
+	Inherit: Image2D
+	Texture: data/images/nameOther.png

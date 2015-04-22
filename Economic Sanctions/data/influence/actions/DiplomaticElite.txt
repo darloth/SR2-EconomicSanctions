@@ -1,0 +1,21 @@
+Card: DiplomaticElite
+	Name: #CARD_DIPLOMATICELITE
+	Description: #CARD_DIPLOMATICELITE_DESC
+
+	Icon: CardIcons::09 * ff70ff
+
+	Color: #6900a0
+	Class: Action
+	Rarity: Rare
+
+	Base Play Cost: 6
+
+	Target: upgradeCard = Card
+	Frequency: 0
+	TargetFilterCardUses(upgradeCard, 1, Allow Unlimited = True)
+	TargetFilterHasQuality(upgradeCard)
+	TargetFilterUpgradableQuality(upgradeCard, Add Quality = 1)
+
+	OnOwner(GainInfluenceCard(DiplomaticElite))
+	GainCardCopy(upgradeCard, Uses = 1, Maximum Quality = True, Add Quality = 1)
+	TakeCardUse(upgradeCard)

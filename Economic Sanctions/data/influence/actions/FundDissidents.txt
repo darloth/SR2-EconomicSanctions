@@ -1,0 +1,27 @@
+Card: FundDissidents
+	Name: #CARD_FUNDDISSIDENTS
+	Description: #CARD_FUNDDISSIDENTS_DESC
+
+	Icon: CardIcons::28 * ff0000
+
+	Color: #ff4ff4
+	Class: Action
+	Rarity: Rare
+
+	Base Purchase Cost: 4
+	Base Play Cost: 2
+
+	Target: target = Object
+	Quality Purchase Cost: 1
+	Max Uses: 2
+	Max Quality: 3
+	Quality Play Cost: 1
+	Placement Purchase Cost: 3
+	Uses Purchase Cost: 1
+	TargetFilterOtherEmpire(target)
+
+	PlayMoneyCost(400, Per Quality = 200)
+	Trigger(target, AddStatus(Devastation, Duration = 180), Per Quality = 1)
+	TargetFilterType(target, Type = Planet)
+	Trigger(target, AddStatus(Devastation, Duration = 180), Per Quality = 1)
+	dar_card_effects::NotifyAllTargetEmpire(#DISSIDENTS_NOTIFY, Contact Only = False)

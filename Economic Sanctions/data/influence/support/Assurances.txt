@@ -1,0 +1,28 @@
+Card: Assurances
+	Name: #CARD_ASSURANCES
+	Description: #CARD_ASSURANCES_DESC
+
+	Color: #00faff
+
+	Class: Support
+	Rarity: Epic
+	Side: Both
+	Frequency: 0
+
+	Icon: CardIcons::21
+
+	Max Quality: 3
+
+	Base Play Cost: 2
+	Quality Play Cost: 1
+
+	Base Weight: 2
+	Quality Weight: 1
+
+	ShowDuration(600)
+
+	OnOwner( ModAttributeTimed(ExtraInfluenceBuyCost, Add, 1.0, Duration = 600.0) )
+
+	dar_card_effects::CostPerPlay(1, Same Empire = True)
+	OnOwner(GainInfluenceCard(Assurances))
+	LogVoteEvent(Support = #CARD_ASSURANCES_LOG_Y, Oppose = #CARD_ASSURANCES_LOG_N)

@@ -1,0 +1,21 @@
+Card: Denounce
+	Name: #CARD_DENOUNCE
+	Description: #CARD_DENOUNCE_DESC
+	Icon: CardIcons::25
+
+	Color: #ffa0a0
+	Class: Action
+	Rarity: Epic
+
+	Base Purchase Cost: 3
+	Base Play Cost: 5
+
+	Target: target = Empire
+	GenerateRandomEmpire(target, Generic Chance = 0.75)
+	TargetFilterOtherEmpire(target)
+	DisappearSelfBuy(target)
+
+	FillStackWithLeverage(target, Ignore Self = True)
+	InstantStackRotate()
+
+	NotifyAll(#DENOUNCE_NOTIFY)

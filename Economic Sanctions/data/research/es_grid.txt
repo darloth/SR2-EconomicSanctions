@@ -1,0 +1,4 @@
+Grid: Base
+	ESInitialize: -64,63
+	ESInitialize2: -63,63
+	DevDiplomaticElite: 11,-2

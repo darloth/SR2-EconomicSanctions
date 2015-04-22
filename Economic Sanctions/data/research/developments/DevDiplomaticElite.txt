@@ -1,0 +1,13 @@
+Technology: DevDiplomaticElite
+	Name: #R_DEV_DIPLOMATICELITE
+	Blurb: #R_DEV_DIPLOMATICELITE_BLURB
+	Description: #R_DEV_DIPLOMATICELITE_DESC
+	Class: Unlock
+
+	Point Cost: 1000
+	Time Cost: 120
+
+	Icon: CardIcons::20
+	Color: #6a00a0
+
+	GainInfluenceCard(DiplomaticElite)

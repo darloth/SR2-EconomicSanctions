@@ -1,0 +1,8 @@
+Technology: ESInitialize
+	Name: Man behind curtain 1
+	Color: #aaaaaa
+
+	Description: Nothing to see here!  This tech is just for mod initialization.
+	AutomaticallyUnlocks()
+	GainInfluenceCard(FreeNamePlanet)
+	GainInfluenceCard(Promises)

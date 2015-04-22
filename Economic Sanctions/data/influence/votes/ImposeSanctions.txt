@@ -25,7 +25,6 @@ Card: ImposeSanctions
 	StartVote(ImposeSanctions, planet)
 
 	dar_card_effects::SquaredLevelPlayCost(planet, 2.0)
-	TargetFilterNotWar(planet)
 Vote: ImposeSanctions
 	Name: Impose Trade Sanctions
 

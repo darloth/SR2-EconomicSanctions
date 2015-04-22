@@ -109,3 +109,93 @@ class ImposeSanctions : InfluenceVoteEffect {
 	}
 #section all
 };
+
+//NotifyAllTargetEmpire(<Text>)
+// Send a notification to all empires, referencing a target empire.
+class NotifyAllTargetEmpire : InfluenceCardEffect {
+	Document doc("Sends a notification message to all other empires anonymously, referencing a target empire.");
+	Argument msg("Text", AT_Locale, doc="Message to send.");
+	Argument contact("Contact Only", AT_Boolean, "True", doc="Whether to limit the notification to contacted empires.");
+
+	bool formatNotification(const InfluenceCard@ card, const InfluenceCardPlayEvent@ event, const ICardNotification@ notification, string& text) const override {
+		auto@ n = cast<const CardNotification>(notification);
+	
+		array<string> args;
+		args.insertLast(formatEmpireName(card.owner));
+		args.insertLast(card.formatTitle());
+		args.insertLast(formatEmpireName(n.relatedObject.owner));
+		event.targets.formatInto(args);
+
+		text = format(arguments[0].str, args);
+		return true;
+	}
+
+#section server
+	void onPlay(InfluenceCard@ card, Targets@ targets) const override {
+		for(uint i = 0, cnt = getEmpireCount(); i < cnt; ++i) {
+			auto@ emp = getEmpire(i);
+			if(!emp.major)
+				continue;
+			if(emp is card.owner)
+				continue;
+			if(arguments[1].boolean && card.owner.ContactMask & emp.mask == 0)
+				continue;
+
+			CardNotification n;
+			n.event.card = card;
+			n.event.targets = targets;
+			@n.event.card.owner = defaultEmpire;
+
+			cast<NotificationStore>(emp.Notifications).addNotification(emp, n);
+		}
+	}
+#section all
+};
+
+//GiveLeverageToOwner(<Object>, <Quality Factor> = 1.0)
+// Give the owner of <Object> leverage on the card's empire.
+class GiveLeverageToOwner : InfluenceCardEffect {
+	Document doc("Generate leverage against the owner of the targeted object.");
+	Argument targ("Object", TT_Object);
+	Argument qual("Quality Factor", AT_Decimal, "1.0", doc="Magic value to determine how valuable the leverage is.");
+
+#section server
+	void onPlay(InfluenceCard@ card, Targets@ targets) const override {
+		Object@ obj = arguments[0].fromConstTarget(targets).obj;
+		Empire@ emp = obj.owner;
+		if(emp !is null)
+			emp.gainRandomLeverage(card.owner, arguments[1].decimal);
+	}
+#section all
+};
+
+//CostPerPlay(<Cost>, <Same Side> = True, <Same Empire> = False, <Match Targets> = False)
+// Adds cost to playing a card relative to how many times cards of that type
+// have been played before.
+class CostPerPlay : InfluenceCardEffect {
+	Document doc("Adds cost to play this card based on previous uses of the same type of card in this vote.");
+	Argument addCost("Cost", AT_Decimal, doc="Cost added per prior use.");
+	Argument sameSide("Same Side", AT_Boolean, "True", doc="Only count prior uses on the same side.");
+	Argument sameEmp("Same Empire", AT_Boolean, "False", doc="Only count prior uses by the same empire.");
+	Argument match("Match Targets", AT_Boolean, "False", doc="Only count prior uses against the same target.");
+
+	int getPlayCost(const InfluenceCard@ card, const InfluenceVote@ vote, const Targets@ targets) const {
+		if(vote is null)
+			return 0;
+		InfluenceCardSide matchSide = ICS_Both;
+		Empire@ matchEmp;
+		const Targets@ matchTargets;
+		if(arguments[1].boolean)
+			@matchEmp = card.owner;
+		if(arguments[2].boolean && card.type.sideMode == ICS_Both && targets !is null)
+			matchSide = targets[card.type.sideTarget].side ? ICS_Support : ICS_Oppose;
+		if(arguments[3].boolean) {
+			if(targets is null)
+				@matchTargets = card.targets;
+			else
+				@matchTargets = targets;
+		}
+		uint count = vote.countPlayed(card.type, matchEmp, matchSide, matchTargets);
+		return floor(double(count) * arguments[0].decimal);
+	}
+};

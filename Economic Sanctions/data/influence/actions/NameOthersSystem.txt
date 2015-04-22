@@ -1,0 +1,29 @@
+Card: NameOthersSystem
+	Name: #CARD_NAMEOTHERSSYSTEM
+	Description: #CARD_NAMEOTHERSSYSTEM_DESC
+
+	Icon: NameOther
+
+	Color: #ff4ff4
+	Class: Action
+	Rarity: Epic
+
+	Base Purchase Cost: 5
+	Base Play Cost: 9
+
+	ShowEffectiveness(0.2)
+
+	Target: system = Object
+	dar_card_effects::GiveLeverageToOwner(system, Quality Factor = 5.0)
+	TargetFilterOtherEmpire(system)
+	TargetFilterRegion(system)
+	ApplyRegionTargetCostMod(system)
+	TargetFilterUnnamed(system)
+
+	Target: name = Text
+	TargetDefaultPlanetName(name)
+
+	NameObject(system, name)
+	Trigger(system, AddRegionStatus(SystemMorale))
+
+	NotifyAll(#NAMEOTHERSSYSTEM_NOTIFY)

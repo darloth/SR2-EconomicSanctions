@@ -8,7 +8,50 @@ CARD_PREVARICATE_LOG: * The $1 [color=#682e1d][b]Prevaricates[/b][/color], exten
 CARD_IMPOSE_SANCTIONS_DESC: <<
 	Revealing evidence of great corruption in the markets of a given world, we can petition the galactic senate to impose sanctions forbidding traders from contributing to the problem.  Although it will be mostly independent or unaligned traders who are actually stopped by such a proclamation, the economic consequences can still be significant.
 
-	[i]The influence cost to play this action depends on the level of the target planet. If the vote created by this action passes, it will take the specified percentage penalty to all its resource production. The target planet must be scouted and you cannot be at war with the owner - the senate will not entertain such a transparent attempt at manipulation.[/i]
+	[i]The influence cost to play this action depends on the level of the target planet. If the vote created by this action passes, it will take the specified percentage penalty to all its resource production. The target planet must be scouted.[/i]
 
-	[color=#aa9999]Note: This card is currently not quite finished - It still works, but the target planet will take 10 stacks of Blockaded per level for 9 minutes, rather than a percentage penalty while an influence event lasts.  There's also no upkeep cost, and you can't cancel it early. [/color]
+	[color=#aa9999]Note: This card is currently not quite polished - It still works, but the target planet will take 10 stacks of Blockaded per level for 9 minutes, rather than a percentage penalty while an influence event lasts.  There's also no upkeep cost, and you can't cancel it early. [/color]
+>>
+CARD_PROMISES_DESC: <<
+	The public promises we make to gather support now will require using some of our political pull in the future, but this seems a small price to pay for their overwhelming endorsements. It becomes increasingly difficult to justify repeated promises, especially for the same issue.
+
+	[i]Adds weight in support or opposition of a vote. For the next 5 minutes, all support cards you play into votes cost 1 additional influence to play. Reusable.[/i]
+>>
+CARD_ASSURANCES_DESC: <<
+	Making assurances of future goodwill, we can pull more important figures to our cause. We will need to make good on these assurances in future endeavors, however, and people rapidly tire of those who are always drawing on the good will of others.
+
+	[i]Adds weight in support or opposition of a vote. For the next 10 minutes, all cards you buy from Influence Peddling cost 1 extra influence to buy. Reusable.[/i]
+>>
+CARD_FREENAMEFLAGSHIP: Name Flagship (Modest)
+CARD_FREENAMEFLAGSHIP_DESC: <<
+	Flagships are the backbone of the war effort, inspiring the hearts and minds of many of our empire's loyal subjects. While an imposing name and a grandiose naming ceremony inspire the troops and civilians, they also present a drain on the budget and diplomatic service.  Perhaps, for logistical reasons, a more modest and circumspect naming ceremony could be arranged?
+
+	[i]Renames an owned flagship. The flagship gains no bonuses but cannot be renamed in the future. Reusable.[/i]
+>>
+CARD_FREENAMEPLANET: Name Planet (Modest)
+CARD_FREENAMEPLANET_DESC: <<
+	Magnificent planets deserve magnificent names... but there are other less impressive planets out there, and sometimes they need names too. By putting in the proper request, submitting forms promptly and in triplicate, and hiring the appropriate bureaucracts, almost any planet can be officially renamed quietly and without a fuss.  Unfortunately Galactic regulations forbid renaming it again later, at least within a single 100 standard year cycle.
+
+	[i]Renames an owned planet. The planet receives no bonuses but cannot be renamed later. Reusable.[/i]
+>>
+CARD_NAMEOTHERSSYSTEM: Name Others' System
+CARD_NAMEOTHERSSYSTEM_DESC: <<
+	By a series of meticulously planned social engineering opportunities and perfectly timed sponsored media coverage, we can rename another empire's system to essentially whatever we please.  The political coup associated with this gives significant national pride whenever we're in that system, but the current owners will be none too pleased.
+
+	[i]Renames a system belonging to another empire. The owner of the system gains leverage on you, but your fleets gain a +20% effectiveness modifier when fighting in that system.[/i]
+>>
+CARD_FUNDDISSIDENTS: Fund Dissidents
+CARD_FUNDDISSIDENTS_DESC: <<
+	By providing financial and material support to various dissident groups on a target planet, we can damage and destabilize their planet's civilian population and infrastructure, either as an end goal or to make invasion easier.
+
+	[i]Creates the Devastation effect on a planet, which decreases population and loyalty over time.  Amount of devastation increases with quality.[/i]
+>>
+DISSIDENTS_NOTIFY: Someone has funded dissidents on $3's planet $4.  Civilian casualties are mounting day by day.
+DENOUNCE_NOTIFY: The $1 have denounced the $3! Scurrilous insults and assertions abound!
+NAMEOTHERSSYSTEM_NOTIFY: The $1 have sneakily engineered the de facto naming of the [b]$3[/b] System.  Now everyone calls it that, no matter what its owners claim it should be.
+CARD_DIPLOMATICELITE: Diplomatic Elite
+CARD_DIPLOMATICELITE_DESC: <<
+	Call on your cadre of elite diplomats to find a solution to your problem.  They can refine any of your currently existing diplomatic techniques almost into an art form.
+
+	[i]Upgrades one use of a card to its maximum quality. Where appropriate, adds one additional extra quality. Reusable.[/i]
 >>

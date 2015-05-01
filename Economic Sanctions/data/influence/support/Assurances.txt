@@ -16,8 +16,8 @@ Card: Assurances
 	Base Play Cost: 2
 	Quality Play Cost: 1
 
-	Base Weight: 2
-	Quality Weight: 1
+	Base Weight: 3
+	Quality Weight: 2
 
 	ShowDuration(600)
 

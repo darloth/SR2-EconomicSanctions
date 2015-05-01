@@ -21,6 +21,7 @@ Card: NameOthersSystem
 	TargetFilterUnnamed(system)
 
 	Target: name = Text
+	Placement Purchase Cost: 2
 	TargetDefaultPlanetName(name)
 
 	NameObject(system, name)

@@ -3,6 +3,7 @@ Technology: ESInitialize
 	Color: #aaaaaa
 
 	Description: Nothing to see here!  This tech is just for mod initialization.
+	GainInfluenceCard(Assurances)
 	AutomaticallyUnlocks()
 	GainInfluenceCard(FreeNamePlanet)
 	GainInfluenceCard(Promises)

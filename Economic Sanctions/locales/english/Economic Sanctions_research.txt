@@ -1,7 +1,7 @@
 R_DEV_DIPLOMATICELITE: Diplomatic Elite
 R_DEV_DIPLOMATICELITE_BLURB: Can repeatably Enhance influence cards
 R_DEV_DIPLOMATICELITE_DESC: <<
-	[i][color=#aaa]Develop a cadre of elite diplomats and a culture and clique with which to train them, all dedicated to refining the very highest strategems and procedures.[/color][/i]
+	[i][color=#aaa]Develop a cadre of elite diplomats and a culture and organisation with which to train them, all dedicated to refining the very finest strategems and procedures.[/color][/i]
 
 	Gain a "Diplomatic Elite" card immediately upon unlocking this technology, which functions like a reusable "Enhance" card.
 >>
